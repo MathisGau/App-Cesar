@@ -1,4 +1,4 @@
-import { Button, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { Text, TextInput, View, TouchableOpacity } from 'react-native';
 import Slider from '@react-native-community/slider';
 import * as Clipboard from 'expo-clipboard';
 import React, { useState } from 'react';
@@ -21,11 +21,11 @@ export default function App() {
       const character = text[i];
       if (character === ' ') {
         cryptedText += ' ';
-      } else if (alphabet.includes(character)){
+      } else if (alphabet.includes(character)) {
         const index = alphabet.indexOf(character);
-        const newIndex = (index + decal) %26;
+        const newIndex = (index + decal) % 26;
         cryptedText += alphabet[newIndex];
-      }  else {
+      } else {
         cryptedText += character;
       }
     }
@@ -41,11 +41,11 @@ export default function App() {
       const character = text[i];
       if (character === ' ') {
         decryptedText += ' ';
-      } else if (character === "'"){
+      } else if (character === "'") {
         decryptedText += "'";
-      } else if (alphabet.includes(character)){
+      } else if (alphabet.includes(character)) {
         const index = alphabet.indexOf(character);
-        const newIndex = (index - decal +26) %26;
+        const newIndex = (index - decal + 26) % 26;
         decryptedText += alphabet[newIndex];
       } else {
         decryptedText += character;
@@ -91,7 +91,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={{ fontSize: 50, fontWeight: 'bold' }}>César</Text>
       <View style={styles.top}>
-        <TextInput 
+        <TextInput
           style={styles.input}
           placeholder='Votre texte ici'
           onChangeText={(text) => setText(text)}
@@ -129,7 +129,7 @@ export default function App() {
         <TouchableOpacity style={styles.redButton} title="Déchiffrer" onPress={clickDecrypt}>
           <Text style={styles.textButton}>Déchiffrer</Text>
         </TouchableOpacity>
-      </View> 
+      </View>
 
       <View style={styles.bottom}>
         <TextInput
@@ -143,7 +143,7 @@ export default function App() {
         <TouchableOpacity style={styles.blueButton} onPress={Copy}>
           <Text style={styles.textButton}>Copier</Text>
         </TouchableOpacity>
-      </View> 
+      </View>
     </View>
   );
 }
