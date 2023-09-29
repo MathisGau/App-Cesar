@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { Button, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import Slider from '@react-native-community/slider';
 import * as Clipboard from 'expo-clipboard';
 import React, { useState } from 'react';
